@@ -1,0 +1,131 @@
+{
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "fn ${1:name}(${2:params}) -> ${3:int} {",
+      "\t${4:// body}",
+      "\treturn ${5:0};",
+      "}"
+    ],
+    "description": "Create a function"
+  },
+  "Main Function": {
+    "prefix": "main",
+    "body": [
+      "fn main() -> int {",
+      "\t${1:// code}",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "Create main function"
+  },
+  "Struct": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:Name} {",
+      "\t${2:field}: ${3:int},",
+      "}"
+    ],
+    "description": "Create a struct"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:Name} {",
+      "\t${2:// fields}",
+      "\t",
+      "\tfn ${3:method}(self) -> ${4:void} {",
+      "\t\t${5:// body}",
+      "\t}",
+      "}"
+    ],
+    "description": "Create a class"
+  },
+  "Interface": {
+    "prefix": "interface",
+    "body": [
+      "interface ${1:Name} {",
+      "\tfn ${2:method}(self) -> ${3:void};",
+      "}"
+    ],
+    "description": "Create an interface"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} {",
+      "\t${2:// body}",
+      "}"
+    ],
+    "description": "Create an if statement"
+  },
+  "If-Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition} {",
+      "\t${2:// if body}",
+      "} else {",
+      "\t${3:// else body}",
+      "}"
+    ],
+    "description": "Create an if-else statement"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition} {",
+      "\t${2:// body}",
+      "}"
+    ],
+    "description": "Create a while loop"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for ${1:i} in ${2:0}..${3:10} {",
+      "\t${4:// body}",
+      "}"
+    ],
+    "description": "Create a for loop"
+  },
+  "Match Statement": {
+    "prefix": "match",
+    "body": [
+      "match ${1:value} {",
+      "\t${2:pattern} => ${3:result},",
+      "\t_ => ${4:default},",
+      "}"
+    ],
+    "description": "Create a match statement"
+  },
+  "Variable Declaration": {
+    "prefix": "let",
+    "body": [
+      "let ${1:name} = ${2:value};"
+    ],
+    "description": "Declare a variable"
+  },
+  "Mutable Variable": {
+    "prefix": "letmut",
+    "body": [
+      "let mut ${1:name} = ${2:value};"
+    ],
+    "description": "Declare a mutable variable"
+  },
+  "Print": {
+    "prefix": "print",
+    "body": [
+      "print(${1:value});"
+    ],
+    "description": "Print a value"
+  },
+  "Async Function": {
+    "prefix": "asyncfn",
+    "body": [
+      "async fn ${1:name}(${2:params}) -> ${3:void} {",
+      "\t${4:// async body}",
+      "}"
+    ],
+    "description": "Create an async function"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "language-configuration.json"
+      ],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "comments": {
+            "type": "object",
+            "properties": {
+              "lineComment": {
+                "type": "string"
+              },
+              "blockComment": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  ]
+}
