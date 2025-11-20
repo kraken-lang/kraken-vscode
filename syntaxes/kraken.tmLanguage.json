@@ -1,0 +1,168 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Kraken",
+  "scopeName": "source.kraken",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#constants"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.kraken",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.kraken",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.kraken",
+          "match": "\\b(if|else|while|for|loop|break|continue|return|match|case|default)\\b"
+        },
+        {
+          "name": "keyword.other.kraken",
+          "match": "\\b(fn|let|mut|const|struct|class|interface|trait|impl|enum|type|use|mod|pub|async|await|unsafe)\\b"
+        },
+        {
+          "name": "storage.modifier.kraken",
+          "match": "\\b(public|private|static|extern|ref)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.kraken",
+          "match": "\\b(int|float|bool|string|void|i8|i16|i32|i64|u8|u16|u32|u64|f32|f64|char)\\b"
+        },
+        {
+          "name": "entity.name.type.kraken",
+          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.kraken",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.kraken",
+              "match": "\\\\(n|r|t|\\\\|\"|'|0|x[0-9a-fA-F]{2}|u\\{[0-9a-fA-F]+\\})"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.kraken",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.kraken",
+              "match": "\\\\(n|r|t|\\\\|\"|'|0|x[0-9a-fA-F]{2})"
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hex.kraken",
+          "match": "\\b0[xX][0-9a-fA-F_]+\\b"
+        },
+        {
+          "name": "constant.numeric.binary.kraken",
+          "match": "\\b0[bB][01_]+\\b"
+        },
+        {
+          "name": "constant.numeric.octal.kraken",
+          "match": "\\b0[oO][0-7_]+\\b"
+        },
+        {
+          "name": "constant.numeric.float.kraken",
+          "match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9_]+)?\\b"
+        },
+        {
+          "name": "constant.numeric.integer.kraken",
+          "match": "\\b[0-9][0-9_]*\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.kraken",
+          "match": "\\b([a-z_][a-zA-Z0-9_]*)\\s*(?=\\()"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.kraken",
+          "match": "(\\+|\\-|\\*|\\/|\\%)"
+        },
+        {
+          "name": "keyword.operator.comparison.kraken",
+          "match": "(==|!=|<|>|<=|>=)"
+        },
+        {
+          "name": "keyword.operator.logical.kraken",
+          "match": "(&&|\\|\\||!)"
+        },
+        {
+          "name": "keyword.operator.bitwise.kraken",
+          "match": "(&|\\||\\^|<<|>>|~)"
+        },
+        {
+          "name": "keyword.operator.assignment.kraken",
+          "match": "(=|\\+=|\\-=|\\*=|\\/=|%=|&=|\\|=|\\^=|<<=|>>=)"
+        },
+        {
+          "name": "keyword.operator.arrow.kraken",
+          "match": "(->|=>)"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.kraken",
+          "match": "\\b(true|false|null|self|Self)\\b"
+        }
+      ]
+    }
+  }
+}
