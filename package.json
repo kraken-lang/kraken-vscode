@@ -6,7 +6,7 @@
   "publisher": "jamesgober",
   "author": {
     "name": "James Gober",
-    "email": "code@jamesgober.dev"
+    "email": "me@jamesgober.com"
   },
   "license": "Apache-2.0",
   "engines": {
@@ -31,6 +31,7 @@
     "url": "https://github.com/kraken-lang/kraken-vscode/issues"
   },
   "homepage": "https://github.com/kraken-lang/kraken-vscode",
+  "icon": "images/icon.png",
   "contributes": {
     "languages": [
       {
@@ -39,8 +40,8 @@
         "extensions": [".kr"],
         "configuration": "./language-configuration.json",
         "icon": {
-          "light": "./images/file-icon.png",
-          "dark": "./images/file-icon.png"
+          "light": "./images/file-icon.svg",
+          "dark": "./images/file-icon.svg"
         }
       }
     ],
