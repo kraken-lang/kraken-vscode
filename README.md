@@ -3,50 +3,64 @@
     <h1>Kraken Language Support for VS Code</h1>
 </div>
 
+Provides rich language support for the [Kraken](https://github.com/kraken-lang/kraken) programming language.
+
+**Version:** `v0.2.0` — Aligned with Kraken language v0.9.2.
+
 ## Features
 
-Provides rich language support for the Kraken programming language, including:
-
-- **Syntax Highlighting** - Full syntax highlighting for `.kr` and `.krak` files
-- **Code Snippets** - Quick templates for functions, structs, classes, and control flow
-- **Auto-Completion** - Smart bracket, quote, and parenthesis pairing
-- **Code Folding** - Collapse and expand code blocks
-- **Comment Support** - Line (`//`) and block (`/* */`) comments
+- **Syntax Highlighting** — Full highlighting for `.kr` files
+- **Code Snippets** — Quick templates for functions, structs, enums, classes, traits, and control flow
+- **Auto-Completion** — Smart bracket, quote, and parenthesis pairing
+- **Code Folding** — Collapse and expand code blocks
+- **Comment Support** — Line (`//`), block (`/* */`), and doc comments (`///`, `//!`)
+- **Attribute Support** — Highlighting for `#[...]` attributes
 
 ## Syntax Highlighting
 
-The extension provides comprehensive syntax highlighting for:
-
-- **Keywords**: `fn`, `let`, `mut`, `if`, `else`, `while`, `for`, `match`, `struct`, `class`, `interface`, `async`, `await`
-- **Types**: `int`, `float`, `bool`, `string`, `void`, `i8`, `i16`, `i32`, `i64`, `u8`, `u16`, `u32`, `u64`, `f32`, `f64`
-- **Operators**: Arithmetic, comparison, logical, bitwise, and assignment operators
-- **Literals**: Numbers (decimal, hex, binary, octal, float), strings, booleans
-- **Comments**: Line and block comments
+- **Keywords**: `fn`, `let`, `mut`, `const`, `if`, `else`, `while`, `for`, `match`, `return`, `break`, `continue`, `defer`, `struct`, `enum`, `union`, `class`, `interface`, `trait`, `impl`, `type`, `pub`, `import`, `module`, `async`, `await`, `spawn`, `unsafe`, `where`, `static_assert`, `move`, `dyn`, `in`
+- **Types**: `int`, `float`, `bool`, `string`, `str`, `bytes`, `void`, `i8`–`i64`, `u8`–`u64`, `f32`, `f64`, `char`
+- **Operators**: Arithmetic, comparison, logical, bitwise, assignment, and compound assignment
+- **Literals**: Numbers (decimal, hex, binary, octal, float), strings, characters, booleans, `null`
+- **Comments**: Line, block, and doc comments
+- **Attributes**: `#[...]` annotations
 - **Functions**: Function names and declarations
 
 ## Code Snippets
 
 Type these prefixes and press Tab to expand:
 
-- `fn` - Function declaration
-- `main` - Main function
-- `struct` - Struct definition
-- `class` - Class definition
-- `interface` - Interface definition
-- `if` - If statement
-- `ifelse` - If-else statement
-- `while` - While loop
-- `for` - For loop
-- `match` - Match statement
-- `let` - Variable declaration
-- `letmut` - Mutable variable
-- `asyncfn` - Async function
+- `fn` — Function declaration
+- `pubfn` — Public function
+- `main` — Main function
+- `asyncfn` — Async function
+- `struct` — Struct definition
+- `enum` — Enum definition
+- `union` — Union definition
+- `class` — Class definition
+- `interface` — Interface definition
+- `trait` — Trait definition
+- `impl` — Impl block
+- `if` — If statement
+- `ifelse` — If-else statement
+- `while` — While loop
+- `for` — For loop
+- `match` — Match expression
+- `let` — Variable declaration
+- `letmut` — Mutable variable
+- `defer` — Defer block
+- `import` — Import declaration
+- `module` — Module declaration
+- `spawn` — Spawn async task
 
 ## Example
 
 ```kraken
+import std.io;
+
 fn main() -> int {
     let message = "Hello, Kraken!";
+    io.println(message);
     return 0;
 }
 ```
@@ -66,7 +80,7 @@ To compile Kraken code, you need the [Kraken compiler](https://github.com/kraken
 4. Click Install
 
 ### From VSIX
-1. Download the `.vsix` file
+1. Download the `.vsix` file from [Releases](https://github.com/kraken-lang/kraken-vscode/releases)
 2. Open VS Code
 3. Go to Extensions
 4. Click "..." menu → "Install from VSIX"
@@ -74,33 +88,23 @@ To compile Kraken code, you need the [Kraken compiler](https://github.com/kraken
 
 ## Development
 
-To work on this extension:
-
 ```bash
-# Install dependencies
 npm install
-
-# Package the extension
 npm run package
-
-# Install locally
-code --install-extension kraken-lang-0.1.0.vsix
+code --install-extension kraken-lang-0.2.0.vsix
 ```
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome. Please submit a Pull Request.
 
 ## License
 
-MIT License - See LICENSE file for details
+Apache-2.0 — See [LICENSE](LICENSE) for details.
 
 ## Links
 
-- [Kraken Language Repository](https://github.com/kraken-lang/kraken)
-- [VS Code Extension Repository](https://github.com/kraken-lang/kraken-vscode)
+- [Kraken Language](https://github.com/kraken-lang/kraken)
+- [Tree-sitter Grammar](https://github.com/kraken-lang/tree-sitter-kraken)
+- [Language Server](https://github.com/kraken-lang/kraken-lsp)
 - [Report Issues](https://github.com/kraken-lang/kraken-vscode/issues)
-
-## Release Notes
-
-See [CHANGELOG.md](CHANGELOG.md) for details.

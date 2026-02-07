@@ -2,43 +2,46 @@
   "name": "kraken-lang",
   "displayName": "Kraken Language Support",
   "description": "Syntax highlighting, snippets, and language features for the Kraken programming language",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "jamesgober",
   "author": {
     "name": "James Gober",
     "email": "code@jamesgober.dev"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "engines": {
     "vscode": "^1.80.0"
   },
   "categories": [
     "Programming Languages",
-    "Snippets",
-    "Linters"
+    "Snippets"
   ],
   "keywords": [
     "kraken",
     "systems programming",
     "compiled language",
-    "performance"
+    "performance",
+    "syntax highlighting"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kraken-lang/kraken.git",
-    "directory": "editors/vscode"
+    "url": "git+https://github.com/kraken-lang/kraken-vscode.git"
   },
   "bugs": {
-    "url": "https://github.com/kraken-lang/kraken/issues"
+    "url": "https://github.com/kraken-lang/kraken-vscode/issues"
   },
-  "main": "./out/extension.js",
+  "homepage": "https://github.com/kraken-lang/kraken-vscode",
   "contributes": {
     "languages": [
       {
         "id": "kraken",
         "aliases": ["Kraken", "kraken"],
-        "extensions": [".kraken", ".kk"],
-        "configuration": "./language-configuration.json"
+        "extensions": [".kr"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/file-icon.png",
+          "dark": "./images/file-icon.png"
+        }
       }
     ],
     "grammars": [
@@ -56,15 +59,9 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
     "package": "vsce package"
   },
   "devDependencies": {
-    "@types/vscode": "^1.80.0",
-    "@types/node": "^18.0.0",
-    "typescript": "^5.0.0",
-    "vsce": "^2.15.0"
+    "@vscode/vsce": "^2.24.0"
   }
 }

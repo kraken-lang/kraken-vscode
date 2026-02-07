@@ -88,15 +88,15 @@
     ],
     "description": "Create a for loop"
   },
-  "Match Statement": {
+  "Match Expression": {
     "prefix": "match",
     "body": [
       "match ${1:value} {",
-      "\t${2:pattern} => ${3:result},",
-      "\t_ => ${4:default},",
+      "\t${2:pattern} -> ${3:result},",
+      "\t_ -> ${4:default},",
       "}"
     ],
-    "description": "Create a match statement"
+    "description": "Create a match expression"
   },
   "Variable Declaration": {
     "prefix": "let",
@@ -127,5 +127,82 @@
       "}"
     ],
     "description": "Create an async function"
+  },
+  "Public Function": {
+    "prefix": "pubfn",
+    "body": [
+      "pub fn ${1:name}(${2:params}) -> ${3:int} {",
+      "\t${4:// body}",
+      "}"
+    ],
+    "description": "Create a public function"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1:Name} {",
+      "\t${2:Variant},",
+      "}"
+    ],
+    "description": "Create an enum"
+  },
+  "Union": {
+    "prefix": "union",
+    "body": [
+      "union ${1:Name} {",
+      "\t${2:field}: ${3:int},",
+      "}"
+    ],
+    "description": "Create a union"
+  },
+  "Impl Block": {
+    "prefix": "impl",
+    "body": [
+      "impl ${1:Type} {",
+      "\tfn ${2:method}(self) -> ${3:void} {",
+      "\t\t${4:// body}",
+      "\t}",
+      "}"
+    ],
+    "description": "Create an impl block"
+  },
+  "Trait": {
+    "prefix": "trait",
+    "body": [
+      "trait ${1:Name} {",
+      "\tfn ${2:method}(self) -> ${3:void};",
+      "}"
+    ],
+    "description": "Create a trait"
+  },
+  "Defer": {
+    "prefix": "defer",
+    "body": [
+      "defer {",
+      "\t${1:// cleanup}",
+      "}"
+    ],
+    "description": "Create a defer block"
+  },
+  "Import": {
+    "prefix": "import",
+    "body": [
+      "import ${1:module};"
+    ],
+    "description": "Import a module"
+  },
+  "Module": {
+    "prefix": "module",
+    "body": [
+      "module ${1:name};"
+    ],
+    "description": "Declare a module"
+  },
+  "Spawn": {
+    "prefix": "spawn",
+    "body": [
+      "spawn ${1:async_call};"
+    ],
+    "description": "Spawn an async task"
   }
 }

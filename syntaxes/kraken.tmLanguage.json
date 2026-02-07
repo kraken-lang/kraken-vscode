@@ -7,6 +7,9 @@
       "include": "#comments"
     },
     {
+      "include": "#attributes"
+    },
+    {
       "include": "#keywords"
     },
     {
@@ -32,6 +35,14 @@
     "comments": {
       "patterns": [
         {
+          "name": "comment.line.documentation.kraken",
+          "match": "///.*$"
+        },
+        {
+          "name": "comment.line.documentation.module.kraken",
+          "match": "//!.*$"
+        },
+        {
           "name": "comment.line.double-slash.kraken",
           "match": "//.*$"
         },
@@ -42,19 +53,35 @@
         }
       ]
     },
+    "attributes": {
+      "patterns": [
+        {
+          "name": "meta.attribute.kraken",
+          "begin": "#\\[",
+          "end": "\\]",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.attribute.kraken" }
+          },
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.attribute.kraken" }
+          },
+          "patterns": [
+            { "include": "#strings" },
+            { "include": "#numbers" },
+            { "include": "#constants" }
+          ]
+        }
+      ]
+    },
     "keywords": {
       "patterns": [
         {
           "name": "keyword.control.kraken",
-          "match": "\\b(if|else|while|for|loop|break|continue|return|match|case|default)\\b"
+          "match": "\\b(if|else|while|for|break|continue|return|match|defer)\\b"
         },
         {
           "name": "keyword.other.kraken",
-          "match": "\\b(fn|let|mut|const|struct|class|interface|trait|impl|enum|type|use|mod|pub|async|await|unsafe)\\b"
-        },
-        {
-          "name": "storage.modifier.kraken",
-          "match": "\\b(public|private|static|extern|ref)\\b"
+          "match": "\\b(fn|let|mut|const|struct|class|interface|trait|impl|enum|union|type|import|module|pub|async|await|spawn|unsafe|where|static_assert|move|dyn|in)\\b"
         }
       ]
     },
@@ -62,7 +89,7 @@
       "patterns": [
         {
           "name": "storage.type.kraken",
-          "match": "\\b(int|float|bool|string|void|i8|i16|i32|i64|u8|u16|u32|u64|f32|f64|char)\\b"
+          "match": "\\b(int|float|bool|string|str|bytes|void|i8|i16|i32|i64|u8|u16|u32|u64|f32|f64|char)\\b"
         },
         {
           "name": "entity.name.type.kraken",
@@ -152,7 +179,7 @@
         },
         {
           "name": "keyword.operator.arrow.kraken",
-          "match": "(->|=>)"
+          "match": "->"
         }
       ]
     },
