@@ -1,6 +1,6 @@
 {
   "name": "kraken-lang",
-  "displayName": "Kraken Language Support",
+  "displayName": "Kraken Lang",
   "description": "Syntax highlighting, snippets, and language features for the Kraken programming language",
   "version": "0.2.0",
   "publisher": "jamesgober",
